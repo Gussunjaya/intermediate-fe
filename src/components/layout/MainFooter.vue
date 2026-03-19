@@ -3,7 +3,7 @@
   <footer class="bg-gray-50 border-t border-gray-100 mt-16">
     <div class="container mx-auto px-4 py-12">
       <!-- NAVIGASI UTAMA -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+      <div class="ml-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
         <div>
           <h3 class="font-semibold mb-4">Produk</h3>
           <ul class="space-y-2 text-gray-600">

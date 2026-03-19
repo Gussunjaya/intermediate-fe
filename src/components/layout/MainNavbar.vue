@@ -62,6 +62,15 @@ import {
         <a href="#">Kids</a>
         <a href="#">Sale</a>
         <a href="#">SNKRS</a>
+
+        <div class="flex items-center gap-2">
+          <button class="p-2 hover:bg-gray-100 rounded-full">
+            <HeartIcon class="w-5 h-5" />
+          </button>
+          <button class="p-2 hover:bg-gray-100 rounded-full">
+            <ShoppingBagIcon class="w-5 h-5" />
+          </button>
+        </div>
       </nav>
     </div>
   </header>
