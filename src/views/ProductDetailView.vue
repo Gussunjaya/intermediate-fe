@@ -22,6 +22,55 @@ const products = [
     image: '/src/assets/images/products/cloth-2.png',
     description: 'Dirancang untuk kenyamanan maksimal saat aktivitas harian.',
   },
+  {
+    id: 3,
+    name: 'Kaos Urban Street Style',
+    category: 'T-Shirt',
+    price: 149,
+    image: '/src/assets/images/products/cloth-3.png',
+    description: 'Kaos dengan desain urban yang cocok untuk gaya streetwear.',
+  },
+  {
+    id: 4,
+    name: 'Kaos Essential Casual Fit',
+    category: 'T-Shirt',
+    price: 135,
+    image: '/src/assets/images/products/cloth-4.png',
+    description:
+      'Kaos dengan potongan casual fit yang memberikan kesan santai namun tetap stylish.',
+  },
+  {
+    id: 5,
+    name: 'Kaos Modern Relax Tee',
+    category: 'T-Shirt',
+    price: 155,
+    image: '/src/assets/images/products/cloth-5.png',
+    description: 'Kaos modern dengan bahan yang sangat lembut, cocok untuk bersantai di rumah.',
+  },
+  {
+    id: 6,
+    name: 'Kaos Minimal Classic Wear',
+    category: 'T-Shirt',
+    price: 145,
+    image: '/src/assets/images/products/cloth-6.png',
+    description: 'Kaos minimalis dengan desain klasik yang mudah dipadupadankan.',
+  },
+  {
+    id: 7,
+    name: 'Kaos Everyday Soft Touch',
+    category: 'T-Shirt',
+    price: 159,
+    image: '/src/assets/images/products/cloth-7.png',
+    description: 'Kaos dengan sentuhan lembut yang nyaman dipakai setiap hari.',
+  },
+  {
+    id: 8,
+    name: 'Kaos Premium Comfort Tee',
+    category: 'T-Shirt',
+    price: 169,
+    image: '/src/assets/images/products/cloth-8.png',
+    description: 'Kaos premium dengan kualitas bahan terbaik untuk kenyamanan maksimal.',
+  },
   // (Tambahkan sisa data dummy produk lainnya di sini)
 ]
 
