@@ -1,6 +1,8 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
+import { StarIcon, TruckIcon, ShieldCheckIcon } from '@heroicons/vue/24/outline'
+import { cart } from '../stores/cart'
 
 const route = useRoute()
 
@@ -105,9 +107,13 @@ const product = computed(() => {
         </div>
 
         <div class="flex gap-4 pt-4">
-          <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+          <button
+            @click="cart.add(product)"
+            class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+          >
             Add to Cart
           </button>
+
           <button class="border border-gray-300 px-6 py-3 rounded-lg hover:bg-gray-50 transition">
             Wishlist
           </button>

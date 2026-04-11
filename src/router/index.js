@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductDetailView from '../views/ProductDetailView.vue'
+import CartView from '@/views/CartView.vue'
 
 // Definisi Routes: Mapping URL ke Component
 const routes = [
@@ -16,6 +17,10 @@ const routes = [
   {
     path: '/about', // Route untuk handling 404
     redirect: '/',
+  },
+  {
+    path: '/cart',
+    component: CartView,
   },
 ]
 
