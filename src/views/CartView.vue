@@ -23,10 +23,25 @@ import { cart } from '@/stores/cart'
           </div>
 
           <div class="flex items-center gap-3">
-            <button @click="cart.decrease(item.id)">-</button>
+            <button
+              @click="cart.decrease(item.id)"
+              class="w-8 h-8 rounded-full hover:bg-blue-500 hover:text-white flex items-center justify-center transition"
+            >
+              -
+            </button>
             <span>{{ item.qty }}</span>
-            <button @click="cart.increase(item.id)">+</button>
-            <button @click="cart.remove(item.id)" class="text-red-500 text-sm">Hapus</button>
+            <button
+              @click="cart.increase(item.id)"
+              class="w-8 h-8 rounded-full hover:bg-blue-500 hover:text-white flex items-center justify-center transition"
+            >
+              +
+            </button>
+            <button
+              @click="cart.remove(item.id)"
+              class="text-red-500 text-sm hover:bg-red-500 hover:text-white flex px-2 py-1 rounded-full transition"
+            >
+              Hapus
+            </button>
           </div>
         </div>
       </div>

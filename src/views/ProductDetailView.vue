@@ -1,7 +1,6 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
-import { StarIcon, TruckIcon, ShieldCheckIcon } from '@heroicons/vue/24/outline'
 import { cart } from '@/stores/cart'
 
 const route = useRoute()
