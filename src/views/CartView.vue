@@ -23,7 +23,9 @@ import { cart } from '@/stores/cart'
           </div>
 
           <div class="flex items-center gap-3">
-            <span>Qty: {{ item.qty }}</span>
+            <button @click="cart.decrease(item.id)">-</button>
+            <span>{{ item.qty }}</span>
+            <button @click="cart.increase(item.id)">+</button>
             <button @click="cart.remove(item.id)" class="text-red-500 text-sm">Hapus</button>
           </div>
         </div>
@@ -43,7 +45,7 @@ import { cart } from '@/stores/cart'
 
           <div class="flex justify-between text-gray-500">
             <span>Subtotal</span>
-            <span>IDR {{ cart.totalPrice }}K</span>
+            <span>IDR {{ cart.formatPrice(cart.totalPrice.value) }}K</span>
           </div>
 
           <div class="flex justify-between text-gray-500">
@@ -53,7 +55,7 @@ import { cart } from '@/stores/cart'
 
           <div class="border-t border-gray-100 pt-3 flex justify-between font-semibold text-lg">
             <span>Total</span>
-            <span>IDR {{ cart.totalPrice }}K</span>
+            <span>IDR {{ cart.formatPrice(cart.totalPrice.value) }}K</span>
           </div>
         </div>
 

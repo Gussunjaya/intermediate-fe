@@ -6,7 +6,6 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from '@heroicons/vue/24/outline'
-import { RouterLink } from 'vue-router'
 import { cart } from '@/stores/cart'
 import { ref } from 'vue'
 
