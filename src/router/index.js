@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductDetailView from '../views/ProductDetailView.vue'
 import CartView from '@/views/CartView.vue'
+import CheckoutView from '@/views/CheckoutView.vue'
+import LoginView from '@/views/LoginView.vue'
 
 // Definisi Routes: Mapping URL ke Component
 const routes = [
@@ -21,6 +23,14 @@ const routes = [
   {
     path: '/cart',
     component: CartView,
+  },
+  {
+    path: '/login',
+    component: LoginView,
+  },
+  {
+    path: '/checkout',
+    component: CheckoutView,
   },
 ]
 

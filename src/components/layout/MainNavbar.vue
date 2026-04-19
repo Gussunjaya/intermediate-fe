@@ -5,6 +5,7 @@ import {
   ShoppingBagIcon,
   Bars3Icon,
   XMarkIcon,
+  UserIcon,
 } from '@heroicons/vue/24/outline'
 import { cart } from '@/stores/cart'
 import { ref } from 'vue'
@@ -43,6 +44,9 @@ const isMobileMenuOpen = ref(false)
           </div>
 
           <!-- Icons -->
+          <RouterLink to="/login" class="p-2 hover:bg-gray-100 rounded-full" title="Masuk">
+            <UserIcon class="w-5 h-5" />
+          </RouterLink>
           <button class="p-2 hover:bg-gray-100 rounded-xl transition-colors">
             <HeartIcon class="w-5 h-5 text-gray-700" />
           </button>
@@ -89,6 +93,9 @@ const isMobileMenuOpen = ref(false)
         </div>
 
         <!-- Action buttons di mobile -->
+        <RouterLink to="/login" class="p-2 hover:bg-gray-100 rounded-full" title="Masuk">
+          <UserIcon class="w-5 h-5" />
+        </RouterLink>
         <div class="flex gap-4 mt-6 pt-6 border-t">
           <button
             class="flex-1 flex items-center justify-center gap-2 py-3 border rounded-2xl hover:bg-gray-50 transition-colors"

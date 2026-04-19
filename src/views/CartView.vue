@@ -1,6 +1,7 @@
 <script setup>
 import { TruckIcon, ShieldCheckIcon, CreditCardIcon, ClockIcon } from '@heroicons/vue/24/outline'
 import { cart } from '@/stores/cart'
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
@@ -60,7 +61,7 @@ import { cart } from '@/stores/cart'
 
           <div class="flex justify-between text-gray-500">
             <span>Subtotal</span>
-            <span>IDR {{ cart.formatPrice(cart.totalPrice.value) }}K</span>
+            <span>IDR {{ cart.formatPrice(cart.totalPrice.value) }}</span>
           </div>
 
           <div class="flex justify-between text-gray-500">
@@ -70,7 +71,7 @@ import { cart } from '@/stores/cart'
 
           <div class="border-t border-gray-100 pt-3 flex justify-between font-semibold text-lg">
             <span>Total</span>
-            <span>IDR {{ cart.formatPrice(cart.totalPrice.value) }}K</span>
+            <span>IDR {{ cart.formatPrice(cart.totalPrice.value) }}</span>
           </div>
         </div>
 
@@ -97,11 +98,12 @@ import { cart } from '@/stores/cart'
           </div>
         </div>
 
-        <button
-          class="w-full bg-blue-600 text-white py-3 rounded-xl font-medium hover:bg-blue-700 transition"
+        <RouterLink
+          to="/checkout"
+          class="block w-full bg-blue-600 text-white py-3 rounded-xl font-medium hover:bg-blue-700 transition text-center"
         >
           Checkout Sekarang
-        </button>
+        </RouterLink>
 
         <p class="text-xs text-gray-400 text-center">Transaksi aman & terenkripsi.</p>
       </div>
