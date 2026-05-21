@@ -1,4 +1,5 @@
 <script setup>
+import { auth } from '@/stores/auth'
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -12,21 +13,25 @@ const form = reactive({
 
 // State untuk loading dan toggle password
 const isSubmitting = ref(false)
+const errorMessage = ref('')
 const showPassword = ref(false)
 const falsePassword = ref(false) // Password dummy untuk validasi
 
-function handleSubmit() {
+async function handleSubmit() {
+  errorMessage.value = '' // reset error setiap kali submit
   isSubmitting.value = true
-  // Simulasi proses login (delay 1.2 detik)
+
   setTimeout(() => {
-    if (form.password !== '12345') {
-      isSubmitting.value = false
-      falsePassword.value = true
-      return
-    }
+    // Panggil fungsi login dari auth store
+    const success = auth.login(form.email, form.password)
     isSubmitting.value = false
-    alert('Login berhasil! Selamat datang.')
-    router.push('/') // redirect ke homepage
+    if (success) {
+      router.push('/') // login berhasil, redirect ke home
+    } else {
+      // Login gagal, tampilkan pesan error
+      errorMessage.value = 'Email atau password salah. Coba: admin@toko.com / admin123'
+      falsePassword.value = true // trigger tampilan error pada input password
+    }
   }, 1200)
 }
 </script>
@@ -44,6 +49,13 @@ function handleSubmit() {
         @submit.prevent="handleSubmit"
         class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 p-8 space-y-6"
       >
+        <!-- Pesan error jika login gagal -->
+        <div
+          v-if="errorMessage"
+          class="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-3"
+        >
+          {{ errorMessage }}
+        </div>
         <!-- Email Field -->
         <div>
           <label for="email" class="block text-sm font-medium text-gray-700 mb-1"> Email </label>

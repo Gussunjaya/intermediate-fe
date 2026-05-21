@@ -1,3 +1,4 @@
+import { auth } from '@/stores/auth'
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductDetailView from '../views/ProductDetailView.vue'
@@ -31,12 +32,24 @@ const routes = [
   {
     path: '/checkout',
     component: CheckoutView,
+    meta: { requiresAuth: true }, // Menandai route ini membutuhkan autentikasi
   },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
+})
+
+// Navigation Guard
+router.beforeEach((to) => {
+  if (to.meta.requiresAuth && !auth.isLoggedIn.value) {
+    return '/login' // Redirect ke halaman login jika belum terautentikasi
+  }
+
+  if (to.path === '/login' && auth.isLoggedIn.value) {
+    return '/' // Redirect ke home jika sudah login
+  }
 })
 
 export default router

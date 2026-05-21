@@ -9,6 +9,8 @@ import {
 } from '@heroicons/vue/24/outline'
 import { cart } from '@/stores/cart'
 import { ref } from 'vue'
+import { auth } from '@/stores/auth'
+import { ArrowRightStartOnRectangleIcon } from '@heroicons/vue/24/outline'
 
 const isMobileMenuOpen = ref(false)
 </script>
@@ -18,9 +20,9 @@ const isMobileMenuOpen = ref(false)
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="flex items-center justify-between h-16">
         <!-- LOGO -->
-        <div class="flex items-center">
+        <RouterLink to="/" class="flex items-center gap-x-2">
           <img src="/src/assets/images/logo.png" alt="Logo" class="h-9 w-auto rounded-3xl" />
-        </div>
+        </RouterLink>
 
         <!-- DESKTOP MENU -->
         <nav class="hidden md:flex items-center gap-x-8 font-medium text-sm">
@@ -44,9 +46,25 @@ const isMobileMenuOpen = ref(false)
           </div>
 
           <!-- Icons -->
-          <RouterLink to="/login" class="p-2 hover:bg-gray-100 rounded-full" title="Masuk">
+          <!-- Jika belum login: tampilkan tombol masuk -->
+          <RouterLink
+            v-if="!auth.isLoggedIn.value"
+            to="/login"
+            class="p-2 hover:bg-gray-100 rounded-full"
+            title="Masuk"
+          >
             <UserIcon class="w-5 h-5" />
           </RouterLink>
+
+          <!-- Jika sudah login: tampilkan tombol keluar -->
+          <button
+            v-else
+            @click="auth.logout()"
+            class="p-2 hover:bg-gray-100 rounded-full"
+            title="Keluar"
+          >
+            <ArrowRightStartOnRectangleIcon class="w-5 h-5" />
+          </button>
           <button class="p-2 hover:bg-gray-100 rounded-xl transition-colors">
             <HeartIcon class="w-5 h-5 text-gray-700" />
           </button>
@@ -93,9 +111,25 @@ const isMobileMenuOpen = ref(false)
         </div>
 
         <!-- Action buttons di mobile -->
-        <RouterLink to="/login" class="p-2 hover:bg-gray-100 rounded-full" title="Masuk">
+        <!-- Jika belum login: tampilkan tombol masuk -->
+        <RouterLink
+          v-if="!auth.isLoggedIn.value"
+          to="/login"
+          class="p-2 hover:bg-gray-100 rounded-full"
+          title="Masuk"
+        >
           <UserIcon class="w-5 h-5" />
         </RouterLink>
+
+        <!-- Jika sudah login: tampilkan tombol keluar -->
+        <button
+          v-else
+          @click="auth.logout()"
+          class="p-2 hover:bg-gray-100 rounded-full"
+          title="Keluar"
+        >
+          <ArrowRightStartOnRectangleIcon class="w-5 h-5" />
+        </button>
         <div class="flex gap-4 mt-6 pt-6 border-t">
           <button
             class="flex-1 flex items-center justify-center gap-2 py-3 border rounded-2xl hover:bg-gray-50 transition-colors"
