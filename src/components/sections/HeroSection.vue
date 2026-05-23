@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section class="min-h-screen bg-cover bg-center flex bg-[url('/images/hero-bg.jpg')]">
+  <section class="min-h-screen bg-cover bg-center flex bg-[url('/public/hero.jpg')]">
     <!-- OVERLAY CONTENT -->
     <div class="flex-1 bg-black/25 flex items-center justify-center text-center px-6">
       <div class="text-white">
