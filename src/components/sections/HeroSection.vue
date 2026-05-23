@@ -3,7 +3,7 @@
 <template>
   <section
     class="min-h-screen bg-cover bg-center flex"
-    style="background-image: url('/src/assets/images/hero.jpg')"
+    style="background-image: url('/images/hero-bg.jpg')"
   >
     <!-- OVERLAY CONTENT -->
     <div class="flex-1 bg-black/25 flex items-center justify-center text-center px-6">
